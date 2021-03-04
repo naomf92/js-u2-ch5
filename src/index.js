@@ -6,7 +6,7 @@ class TranslationApp {
   }
 
   setup() {
-    /* 
+    /*
       現在のLocaleに合わせて、polyglotにメッセージをセットします。
       メッセージのセットにはpolyglot.extend()を利用します。
     */
@@ -20,7 +20,7 @@ class TranslationApp {
 
   showMessage() {
     /*
-      mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。 
+      mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。
     */
   }
 
@@ -30,7 +30,7 @@ class TranslationApp {
 {
   const button1 = document.getElementById('button1');
   button1.addEventListener("click", app.updateLocale);
-  
+
   const button2 = document.getElementById('button2');
   button2.addEventListener("click", app.updateLocale);
 }
