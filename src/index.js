@@ -5,27 +5,22 @@ class TranslationApp {
     this.polyglot = new Polyglot();
   }
 
+  /*現在のLocaleに合わせて、polyglotにメッセージをセットします。メッセージのセットにはpolyglot.extend()を利用します。*/
   setup() {
-    /*
-      現在のLocaleに合わせて、polyglotにメッセージをセットします。
-      メッセージのセットにはpolyglot.extend()を利用します。
-    */
+    polyglot.extend({
+      "hello world": "こんにちは、世界"
+    });
   }
 
+  /*ボタンにセットされたdata-localeを元に現在のlocaleを変更します。*/
   updateLocale(e) {
-    /*
-      ボタンにセットされたdata-localeを元に現在のlocaleを変更します。
-    */
   }
 
+  /*mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。*/
   showMessage() {
-    /*
-      mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。
-    */
   }
 
 }
-
 
 {
   const button1 = document.getElementById('button1');
