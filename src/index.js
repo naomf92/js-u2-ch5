@@ -18,6 +18,8 @@ class TranslationApp {
 
   /*mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。*/
   showMessage() {
+    const main = document.getElementById('main');
+    main.innerHTML = "";
   }
 
 }
