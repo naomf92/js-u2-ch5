@@ -3,6 +3,7 @@ import Polyglot from 'node-polyglot';
 class TranslationApp {
   constructor() {
     this.polyglot = new Polyglot();
+    this.currentLocale = ja;
   }
 
   /*現在のLocaleに合わせて、polyglotにメッセージをセットします。メッセージのセットにはpolyglot.extend()を利用します。*/
@@ -19,7 +20,7 @@ class TranslationApp {
   /*mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。*/
   showMessage() {
     const main = document.getElementById('main');
-    main.innerHTML = "";
+    main.innerHTML = polyglot.t("hello world");;
   }
 
 }
