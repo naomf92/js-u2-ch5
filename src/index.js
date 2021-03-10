@@ -20,6 +20,8 @@ class TranslationApp {
   /*mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。*/
   showMessage() {
     const main = document.getElementById('main');
+    // 翻訳文章データは、polyglot.extend()内にセットなので、英語のデータも、関数setup内で日本語と同じように用意をします
+    // polyglot.t()の引数は、polyglot.extend()内で指定をした、オブジェクトのプロパティ名になります
     main.innerHTML = polyglot.t("hello world");;
   }
 
