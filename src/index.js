@@ -8,6 +8,7 @@ class TranslationApp {
 
   /*現在のLocaleに合わせて、polyglotにメッセージをセットします。メッセージのセットにはpolyglot.extend()を利用します。*/
   setup() {
+    // どちらも共通のオブジェクトプロパティ名にしてしまって、if文条件分岐で値だけを入れ替えると、t()メソッド呼び出し記述が一度で済みます & Polyglotの構文上、オブジェクトのプロパティが文字列ですが、変数、定数、関数、引数のような役割をするので、"helo" もしくは"helloEn"などにしておくと、呼び出しの際にオブジェクトのプロパティだと視覚的にわかりやすいです
     polyglot.extend({
       "hello world": "こんにちは、世界",
       "こんにちは、世界":"hello world"
@@ -22,7 +23,7 @@ class TranslationApp {
   showMessage() {
     const main = document.getElementById('main');
     // 翻訳文章データは、polyglot.extend()内にセットなので、英語のデータも、関数setup内で日本語と同じように用意をします
-    // polyglot.t()の引数は、polyglot.extend()内で指定をした、オブジェクトのプロパティ名になります
+    // 上記のように修正しましょう
     main.innerHTML = polyglot.t("hello world");
   }
 
