@@ -9,7 +9,8 @@ class TranslationApp {
   /*現在のLocaleに合わせて、polyglotにメッセージをセットします。メッセージのセットにはpolyglot.extend()を利用します。*/
   setup() {
     polyglot.extend({
-      "hello world": "こんにちは、世界"
+      "hello world": "こんにちは、世界",
+      "こんにちは、世界":"hello world"
     });
   }
 
@@ -22,7 +23,7 @@ class TranslationApp {
     const main = document.getElementById('main');
     // 翻訳文章データは、polyglot.extend()内にセットなので、英語のデータも、関数setup内で日本語と同じように用意をします
     // polyglot.t()の引数は、polyglot.extend()内で指定をした、オブジェクトのプロパティ名になります
-    main.innerHTML = polyglot.t("hello world");;
+    main.innerHTML = polyglot.t("hello world");
   }
 
 }
