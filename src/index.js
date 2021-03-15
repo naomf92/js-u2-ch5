@@ -8,15 +8,28 @@ class TranslationApp {
 
   /*現在のLocaleに合わせて、polyglotにメッセージをセットします。メッセージのセットにはpolyglot.extend()を利用します。*/
   setup() {
-    // = は「代入」という意味なので「等しい」と言う意味の演算子を使うと良いですね
-    if (this.currentLocale = ja) {
-      polyglot.extend({
-        'hello': 'こんにちは、世界'
-      });
-    } else {// 今回は日本語と英語のみなのでelseでもOKですが、他の言語が増えた時に対処しやすくするにはどうしたら良いでしょうか？
-      polyglot.extend({
-        'hello': 'Hello World'
-      });
+    // if (this.currentLocale === ja) {
+    //   polyglot.extend({
+    //     'hello': 'こんにちは、世界'
+    //   });
+    // } else {
+    //   polyglot.extend({
+    //     'hello': 'Hello World'
+    //   });
+    // }
+
+    let locale = ja;
+    switch (locale) {
+      case ja:
+        polyglot.extend({
+        'hello':'こんにちは、世界'
+        });
+        break;
+      case en:
+        polyglot.extend({
+        'hello':'Hello World'
+        });
+        break;
     }
   }
 
