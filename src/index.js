@@ -3,7 +3,11 @@ import Polyglot from 'node-polyglot';
 class TranslationApp {
   constructor() {
     this.polyglot = new Polyglot();
-    this.currentLocale = 'ja';
+    //this.currentLocale ='ja';
+
+    let getData = localStorage.getItem('locale');//データの取得
+    this.currentLocale = 'getData';
+    console.log(getData);
   }
 
   /*現在のLocaleに合わせて、polyglotにメッセージをセットします。メッセージのセットにはpolyglot.extend()を利用します。*/
@@ -25,7 +29,11 @@ class TranslationApp {
   updateLocale(e) {
     const locale = e.target.dataset.locale;
     this.currentLocale = locale;
-    //console.log(this.currentLocale);
+
+    //let getData = localStorage.getItem('locale');//データの取得
+    //console.log(getData);
+
+    localStorage.setItem('locale', locale);//データの保存
   }
 
   /*mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。*/
