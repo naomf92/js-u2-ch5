@@ -5,6 +5,7 @@ class TranslationApp {
     this.polyglot = new Polyglot();
     //this.currentLocale ='ja';
 
+    // 変数currentLocalにwebストレージを使ったデータ取得メソッドを代入すると、扱いやすくなります
     let getData = localStorage.getItem('locale');//データの取得
     this.currentLocale = 'getData';
     console.log(getData);
