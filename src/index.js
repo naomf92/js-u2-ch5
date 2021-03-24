@@ -6,6 +6,9 @@ class TranslationApp {
     this.currentLocale = localStorage.getItem('locale') || 'ja';//データの取得
     // ここに本来thisに参照して欲しい関数を、bindメソッドでthisが思うような値を参照してくれない挙動をbind（固定）してしまい、スコープを超えた関数がthisを使ってきちんと取得できるように調整します。
     // 3つの関数全てが関わっている関数がbindされると、thisの挙動を1つの記述だけで押さえられるかもしれません
+
+    const bind = this.updateLocale.bind();
+    bind();
   }
 
   /*現在のLocaleに合わせて、polyglotにメッセージをセットします。メッセージのセットにはpolyglot.extend()を利用します。*/
